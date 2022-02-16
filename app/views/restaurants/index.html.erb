@@ -2,10 +2,12 @@
 <div class="container">
   <h2>List of restaurants</h2>
   <div class="row row-cols-3 mb-4">
+    <% i = 0 %>
     <% @restaurants.each do |restaurant| %>
       <div class="col card">
         <div class="card mb-3 mt-3">
-          <img src="https://picsum.photos/300/200" class="card-img-top" alt="food">
+          <% i += 1 %>
+          <img src="https://picsum.photos/300/200?random=<%=i%>" class="card-img-top" alt="food">
           <div class="card-body">
             <h5 class="card-title"><%= restaurant.name %></h5>
             <p class="card-text"><%="This #{restaurant.category.capitalize} in the heart of #{restaurant.address} is perfect for you today!"%></p>
